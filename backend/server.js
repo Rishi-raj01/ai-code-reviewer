@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 
   // Serve React app for non-API requests
   app.get("*", (req, res) => {
-    if (!req.originalUrl.startsWith("/api")) {
+    if (!req.originalUrl.startsWith("/ai")) {
       res.sendFile(path.join(__dirname, "../client/build/index.html")); 
     }
   });
