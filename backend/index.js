@@ -17,9 +17,7 @@ app.use(cors({
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
+
 
 app.use('/api/v1/ai', aiRoutes)
 
@@ -34,7 +32,9 @@ if (process.env.NODE_ENV === "production") {
     }
   });
 }
-
+app.get('/', (req, res) => {
+    res.send('Hello World')
+})
 app.listen(5000, () => {
     console.log('Server is running on http://localhost:5000')
 })
