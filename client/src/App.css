@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left, main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+
+main .left {
+  background-color: #000000;
+  position: relative; /* Ensures absolute positioning works */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.left .code {
+  flex: 1;
+  overflow: auto;
+  border-radius: 0.7rem;
+  background-color: #0c0c0c;
+  padding: 10px;
+}
+
+.left .code textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: transparent !important;
+  color: #fff !important;
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  outline: none;
+  white-space: pre;
+  overflow: auto;
+}
+
+.left .code pre, .left .code code {
+  all: unset; /* Completely removes default styling */
+}
+
+/* main .left .review{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  text-align: center;
+} */
+
+
+.main-buttons {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem; /* Adds spacing between buttons */
+}
+
+.main-buttons .review,
+.main-buttons .new-button,
+.main-buttons.help {
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  text-align: center;
+  border: none;
+}
+
+main .right {
+  background-color: #343434;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  overflow: auto;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  margin-top: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
